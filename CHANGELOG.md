@@ -1,3 +1,10 @@
+<a name="3.0.1"></a>
+## <small>3.0.1 (2019-02-08)</small>
+
+* version 3.0.1 ([7f42f91](https://github.com/olivbd/angular-pdf/commit/7f42f91))
+
+
+
 <a name="3.0.0"></a>
 ## 3.0.0 (2019-02-08)
 
