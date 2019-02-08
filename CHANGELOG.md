@@ -1,3 +1,13 @@
+<a name="3.0.0"></a>
+## 3.0.0 (2019-02-08)
+
+* Release 3.0.1 ([5283c37](https://github.com/olivbd/angular-pdf/commit/5283c37))
+* Release 4.0.0 ([1cbdfea](https://github.com/olivbd/angular-pdf/commit/1cbdfea))
+* Release 4.0.0 ([fd48045](https://github.com/olivbd/angular-pdf/commit/fd48045))
+* Release 5.0.0 ([ec3835f](https://github.com/olivbd/angular-pdf/commit/ec3835f))
+
+
+
 <a name="4.0.0"></a>
 ## 4.0.0 (2019-02-08)
 
