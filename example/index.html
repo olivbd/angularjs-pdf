@@ -9,15 +9,35 @@
 <body ng-app="App">
 
 <div class="wrapper" ng-controller="DocCtrl">
-  <h1>{{pdfName}}</h1>
-  <ng-pdf template-url="partials/viewer.html" scale="page-fit" page=13></ng-pdf>
+  <h1>Angular PDF viewer</h1>
+  <nav ng-class="getNavStyle(scroll)">
+    <button ng-click="goPrevious()"><span>&lt;</span></button>
+    <button ng-click="goNext()"><span>&gt;</span></button>
+
+    <button ng-click="zoomOut()"><span>-</span></button>
+    <button ng-click="pdf.scale = 'page-fit'"><span>fit</span></button>
+    <button ng-click="pdf.scale = 1"><span>100%</span></button>
+    <button ng-click="zoomIn()"><span>+</span></button>
+
+    <button ng-click="rotate()"><span>Rotate</span></button>
+
+    <span>Page: </span>
+    <input type="number" min="1" max="{{ pdf.pageCount }}" ng-model="pdf.page" ng-model-options="{updateOn: 'mouseup blur'}">
+    <span> / {{pdf.pageCount}}</span>
+
+    &nbsp;&nbsp;
+    <span>Document URL: </span>
+    <input type="text" ng-model="pdf.url" ng-model-options="{updateOn: 'click blur'}">
+  </nav>
+  {{ loading }}
+  <ng-pdf pdf="pdf" debug onerror="error(error)" onload="loading = ''" onprogress="progress(progressData)"></ng-pdf>
 </div>
 
-<a href="https://github.com/sayanee/angularjs-pdf"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+<a href="https://github.com/olivbd/angularjs-pdf"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
 
 <script src="js/lib/angular.min.js"></script>
 <script src="js/lib/pdf.js"></script>
-<script src="angular-pdf.min.js"></script>
+<script src="../dist/angular-pdf.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/controllers/docCtrl.js"></script>
 

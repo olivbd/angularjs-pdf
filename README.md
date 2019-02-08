@@ -1,4 +1,4 @@
-# angular-pdf [![Build Status](https://travis-ci.org/sayanee/angularjs-pdf.svg)](https://travis-ci.org/sayanee/angularjs-pdf) [![Dependency Status](https://gemnasium.com/sayanee/angularjs-pdf.svg)](https://gemnasium.com/sayanee/angularjs-pdf) [![codecov](https://codecov.io/gh/sayanee/angularjs-pdf/branch/master/graph/badge.svg)](https://codecov.io/gh/sayanee/angularjs-pdf)
+# angular-pdf [![Build Status](https://travis-ci.org/olivbd/angularjs-pdf.svg)](https://travis-ci.org/olivbd/angularjs-pdf) [![Dependency Status](https://gemnasium.com/olivbd/angularjs-pdf.svg)](https://gemnasium.com/olivbd/angularjs-pdf) [![codecov](https://codecov.io/gh/sayanee/angularjs-pdf/branch/master/graph/badge.svg)](https://codecov.io/gh/olivbd/angularjs-pdf)
 
 >An [AngularJS](http://angularjs.org/) [directive](http://docs.angularjs.org/guide/directive) `ng-pdf` to display PDF files with [PDFJS](http://mozilla.github.io/pdf.js/).
 
@@ -10,7 +10,7 @@ Integrate PDF files right into web pages.
 
 ## Requirements
 
-Check [`package.json` file](https://github.com/sayanee/angularjs-pdf/blob/master/package.json) for dependencies and their versions:
+Check [`package.json` file](https://github.com/olivbd/angularjs-pdf/blob/master/package.json) for dependencies and their versions:
 
 1. [AngularJS](http://angularjs.org/) - get the latest [angular.min.js](https://developers.google.com/speed/libraries/devguide#angularjs)
 - [PDFJS](http://mozilla.github.io/pdf.js/) - build the files [`pdf.js` and `pdf.worker.js`](https://github.com/mozilla/pdf.js#building-pdfjs)
