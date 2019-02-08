@@ -1,6 +1,6 @@
 /*!
  * Angular-PDF: An Angularjs directive <ng-pdf> to display PDF in the browser with PDFJS.
- * @version 3.0.1
+ * @version 4.0.0
  * @link https://github.com/olivbd/angular-pdf#readme
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */
