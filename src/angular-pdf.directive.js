@@ -171,8 +171,8 @@ export const NgPdf = ($window, $document, $log) => {
         }
       };
 
-      scope.$watch('pdf.url', (newVal, oldVal) => {
-        if (newVal !== '') {
+      scope.$watch('pdf.url', (newVal) => {
+        if (scope.pdf && newVal !== '') {
           if (debug) {
             $log.log('pdfUrl value change detected: ', scope.pdf.url);
           }
@@ -189,25 +189,27 @@ export const NgPdf = ($window, $document, $log) => {
       });
 
       scope.$watch('pdf.page', () => {
-        if (scope.pdf.page < 1 || !scope.pdf.page) {
-          scope.pdf.page = 1;
-        }
-        else if (scope.pdf.page > scope.pdf.pageCount) {
-          scope.pdf.page = scope.pdf.pageCount;
-        }
-        if (pdfDoc !== null) {
-          scope.renderPage(scope.pdf.page);
+        if (scope.pdf) {
+          if (scope.pdf.page < 1 || !scope.pdf.page) {
+            scope.pdf.page = 1;
+          }
+          else if (scope.pdf.page > scope.pdf.pageCount) {
+            scope.pdf.page = scope.pdf.pageCount;
+          }
+          if (pdfDoc !== null) {
+            scope.renderPage(scope.pdf.page);
+          }
         }
       });
 
       scope.$watch('pdf.rotate', () => {
-        if (scope.pdf.rotate !== undefined) {
+        if (scope.pdf && scope.pdf.rotate !== undefined) {
           canvas.setAttribute('class', 'rotate' + scope.pdf.rotate);
         }
       });
 
       scope.$watch('pdf.scale', () => {
-        if (scope.pdf.scale && pdfDoc !== null) {
+        if (scope.pdf && scope.pdf.scale && pdfDoc !== null) {
           scope.renderPage(scope.pdf.page);
         }
       });
