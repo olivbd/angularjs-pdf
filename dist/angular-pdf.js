@@ -1,6 +1,6 @@
 /*!
  * Angular-PDF: An Angularjs directive <ng-pdf> to display PDF in the browser with PDFJS.
- * @version 3.0.1
+ * @version 3.0.2
  * @link https://github.com/olivbd/angular-pdf#readme
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */
@@ -257,8 +257,8 @@ var NgPdf = exports.NgPdf = ["$window", "$document", "$log", function NgPdf($win
         }
       };
 
-      scope.$watch('pdf.url', function (newVal, oldVal) {
-        if (newVal !== '') {
+      scope.$watch('pdf.url', function (newVal) {
+        if (scope.pdf && newVal !== '') {
           if (debug) {
             $log.log('pdfUrl value change detected: ', scope.pdf.url);
           }
@@ -275,24 +275,26 @@ var NgPdf = exports.NgPdf = ["$window", "$document", "$log", function NgPdf($win
       });
 
       scope.$watch('pdf.page', function () {
-        if (scope.pdf.page < 1 || !scope.pdf.page) {
-          scope.pdf.page = 1;
-        } else if (scope.pdf.page > scope.pdf.pageCount) {
-          scope.pdf.page = scope.pdf.pageCount;
-        }
-        if (pdfDoc !== null) {
-          scope.renderPage(scope.pdf.page);
+        if (scope.pdf) {
+          if (scope.pdf.page < 1 || !scope.pdf.page) {
+            scope.pdf.page = 1;
+          } else if (scope.pdf.page > scope.pdf.pageCount) {
+            scope.pdf.page = scope.pdf.pageCount;
+          }
+          if (pdfDoc !== null) {
+            scope.renderPage(scope.pdf.page);
+          }
         }
       });
 
       scope.$watch('pdf.rotate', function () {
-        if (scope.pdf.rotate !== undefined) {
+        if (scope.pdf && scope.pdf.rotate !== undefined) {
           canvas.setAttribute('class', 'rotate' + scope.pdf.rotate);
         }
       });
 
       scope.$watch('pdf.scale', function () {
-        if (scope.pdf.scale && pdfDoc !== null) {
+        if (scope.pdf && scope.pdf.scale && pdfDoc !== null) {
           scope.renderPage(scope.pdf.page);
         }
       });

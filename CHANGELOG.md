@@ -1,3 +1,10 @@
+<a name="3.0.2"></a>
+## <small>3.0.2 (2019-02-11)</small>
+
+* test scope.pdf ([26d979a](https://github.com/olivbd/angular-pdf/commit/26d979a))
+
+
+
 <a name="3.0.1"></a>
 ## <small>3.0.1 (2019-02-08)</small>
 
